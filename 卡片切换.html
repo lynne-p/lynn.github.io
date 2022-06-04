@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卡片切换</title>
+    <link rel="stylesheet" href="./卡片切换.css">
+</head>
+<body>
+    <!-- input标签规定用户可以在其中输入数据的输入字段，type="radio"表示单选按钮 -->
+    <!-- 小技巧 按住alt可点击多行同时输入 -->
+    <div class="container">
+        <input type="radio" name="select" id="slide_1" checked hidden>
+        <input type="radio" name="select" id="slide_2" hidden>
+        <input type="radio" name="select" id="slide_3" hidden>
+
+        <!-- label是input元素定义标签，for属性指向相关元素,可将label与input绑定起来 -->
+        <div class="slider">
+            <label for="slide_1" class="slide slide_1"></label>
+            <label for="slide_2" class="slide slide_2"></label>
+            <label for="slide_3" class="slide slide_3"></label>
+        </div>
+
+        <div class="card card_1">
+            <div class="img">
+                <img src="./image/K-ON-1.png" alt="">
+            </div>
+            <div class="content">
+                <div class="title">轻音少女</div>
+                <div class="text">动画电影《轻音少女！》是同名动画系列的剧场版作品 [1] 。作品由山田尚子执导，以轻音部5人前往伦敦的毕业旅行为主题 [2] 。作品于2011年12月3日在日本首映 [3] ，2012年9月14日起在中国台湾地区上映 [4]
+                ，2021年12月17日起在中国台湾地区复映 [85] ，2012年11月15日起在中国香港上映 [5] 。</div>
+                <a href="https://www.bilibili.com/bangumi/play/ss1175?theme=movie&spm_id_from=333.337.0.0">前往观看</a>
+            </div>
+        </div>
+
+        <div class="card card_2">
+            <div class="img">
+                <img src="./image/平家物语1.png" alt="">
+            </div>
+            <div class="content">
+                <div class="title">平家物语</div>
+                <div class="text">电视动画片《平家物语》改编自古川日出男所译的日本古代同名长篇小说作品，于2021年9月3日宣布动画化的消息。该片由Science
+                SARU负责制作，于2022年1月起在富士电视台的“＋Ultra”栏目播出。此外，该片亦于2021年9月15日起在流媒体平台FOD先行播放，山田尚子执导。</div>
+                <a href="https://www.bilibili.com/bangumi/play/ss39347?spm_id_from=333.337.0.0">前往观看</a>
+            </div>
+        </div>
+
+        <div class="card card_3">
+            <div class="img">
+                <img src="./image/日常1.png" alt="">
+            </div>
+            <div class="content">
+                <div class="title">日常</div>
+                <div class="text">电视动画《日常》是根据日本漫画家あらゐけいいち同名漫画改编的电视动画，由京都动画制作，于2011年4月3日播出，共26话。重制版于2012年1月1日开始在NHK教育频道播出，删减后共12话。OVA于2011年3月12日发售。</div>
+                <a href="https://www.bilibili.com/bangumi/play/ss844?spm_id_from=333.337.0.0">前往观看</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
