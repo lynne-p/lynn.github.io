@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* 设置的边框和内边距是包含在总宽高内的 */
+    box-sizing: border-box;
+}
+.container{
+    /* 绝对定位，相对于第一个父元素进行定位
+    配合后面子绝父相 */
+    position: absolute;
+    width: 100%;
+    /* 100%窗口高度 */
+    height: 100vh;
+    /* 弹性布局 */
+    display: flex;
+    /* 居中 */
+    justify-content: center;
+    align-items: center;
+    /* 渐变背景 */
+    background: linear-gradient(to bottom,#afd4ff,#efcde6);
+    /* 隐藏溢出 */
+    overflow: hidden;
+}
+.container::before{
+    /* content一般是插入生成的内容，一般与::before和::after配合使用，
+    可以插入图片,url,文本内容 */
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 50%;
+    /* 设置元素堆叠顺序，仅在定位元素上有效。一般情况下值越大越靠前，
+    子元素会继承父元素优先级，若父元素没有设置，即默认为auto，子元素就无需从父元素继承优先级
+    z-index为负值时，不仅会处于z-index为0 和正值元素后面，还会处于非堆叠元素后面 */
+    z-index: 1;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    /* 背景模糊 */
+    backdrop-filter: blur(5px);
+}
+.container .color{
+    position: absolute;
+    /* 模糊滤镜，数值越大越模糊 */
+    filter: blur(200px);
+}
+.container .color:nth-child(1){
+    background: #fd746c;
+    width: 800px;
+    height: 500px;
+    top: -400px;
+}
+.container .color:nth-child(2){
+    background: #ff21c0;
+    width: 800px;
+    height: 200px;
+    bottom: -150px;
+    /* left: 100px; */
+}
+.container .color:nth-child(3){
+    background: #fdb99b;
+    width: 400px;
+    height: 400px;
+    bottom: 50px;
+    right: 100px;
+}
+.container::after{
+    content: none;
+}
+ul{
+    position: relative;
+    display: flex;
+    z-index: 2;
+}
+ul li{
+    position: relative;
+    list-style: none;
+    margin: 10px;
+}
+ul li a{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    /* 使对象既可以显示在同一行，又能设置宽高 */
+    display: inline-block;
+    border: 1px solid rgb(255,255,255,0.4); 
+    /* 元素外边框圆角 */
+    border-radius: 10px;
+    /* 阴影 */
+    box-shadow: 0px 5px 45px rgba(255, 255, 255, 0.4);
+    /* 背景模糊:盒子变成毛玻璃材质 */
+    backdrop-filter: blur(2px);
+    /* 文本修饰，去除链接的下划线 */
+    text-decoration: none;
+    color: #fff;
+
+     /* 图标居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 清除溢出 */
+    overflow: hidden;
+    /* 动画:所有效果慢0.5s，使效果不要太生硬 */
+    transition: all 0.5s;
+}
+/* 悬停效果：纵轴方向上移20px */
+ul li a:hover{
+    transform: translateY(-20px);
+}
+/* 扫光动画 */
+ul li a::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 50px;
+    height: 100%;
+    background-color: #fff;
+
+    /* 动画:白光45度斜切 沿x轴右移150px */
+    transform: skewX(-45deg) translateX(150px);
+    /* 减慢动画效果，否则太快不显示 */
+    transition: all 1s;
+}
+ul li a:hover::before{
+    /* 动画:白光45度斜切 沿x轴左移150px */
+    transform: skewX(-45deg) translateX(-150px);
+}
